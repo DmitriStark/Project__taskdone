@@ -1,0 +1,1036 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f8;
+  color: #333;
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sidebar {
+    width: 280px;
+  background-color: #2c3e50;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Add space between sidebar sections */
+}
+
+.sidebar .section-content ul {
+    list-style-type: none;   
+    padding: 0;
+    margin: 0;
+    text-align: center; 
+    font-size: 14px;
+}
+.sidebar .section-content li {
+    margin-bottom: 10px;
+}
+.sidebar .section-content a {
+  color: gray; /* Set text color to gray */
+  text-decoration: none; /* Remove underline */
+}
+
+.sidebar .section-content a:hover {
+  color: #fff; /* Optionally, you can change the color on hover */
+  text-decoration: none; /* Ensure underline is removed on hover */
+}
+
+/* Style for the section */
+.section {
+  transition: border-left 0.3s ease-in-out; /* Add transition effect */
+}
+
+/* Style for the section title */
+.section-title {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.section-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+
+.new-badge {
+    margin-right: 20px; /* Add margin-right here */
+  }
+
+#arrow-icon {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-left: auto;
+  transition: transform 0.3s;
+  margin-right: 20px;
+
+}
+
+.collapsed #arrow-icon {
+  transform: rotate(180deg); /* Rotate arrow when collapsed */
+}
+
+/* Add green line when the section is expanded */
+.section.open {
+  border-left: 3px solid aquamarine;
+}
+
+/* Style for the section content */
+.section-content {
+  padding: 10px;
+  margin-top: 10px;
+  display: none; /* Hide content initially */
+}
+
+/* Display content when the section is open */
+.section.open .section-content {
+  display: block;
+}
+.landingselection {
+    background-color: #76c7c0;
+    padding-top: 10px;  /* Adjust the padding to your liking */
+  }
+  
+
+.sidebar h3 {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.sidebar .section-content {
+  display: none; /* Initially hide the section content */
+}
+
+.sidebar .section-content.open {
+  display: block; /* Show when open class is added */
+}
+.sidebar .section-title {
+  color: gray;
+  font-size: 15px;
+}
+.sidebar .section-title.open {
+  color: white;
+}
+
+.content {
+  flex: 3 1 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 15px;
+}
+
+.top-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Style for the section */
+.section {
+  transition: border-left 0.3s ease-in-out; /* Add transition effect */
+}
+
+/* Style for the section title */
+.section-title {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.section-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+#arrow-icon {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-left: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate the arrow when the section is open */
+.section.open #arrow-icon {
+  transform: rotate(-90deg); /* Rotate arrow down when open */
+}
+
+/* Add green line when the section is expanded */
+.section.open {
+  border-left: 3px solid aquamarine;
+}
+
+/* Style for the section content */
+.section-content {
+  padding: 10px;
+  margin-top: 10px;
+  display: none; /* Hide content initially */
+}
+
+/* Display content when the section is open */
+.section.open .section-content {
+  display: block;
+}
+
+.graphs img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.messages ul,
+.tasks ul {
+  list-style: none;
+}
+
+.graph-amout {
+  font-size: 14px; /* Increased font size */
+  color: #333;
+  margin-bottom: 5px; /* Maintain text spacing */
+}
+
+.messages ul li,
+.tasks ul li {
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+}
+
+.progress-bars {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align the progress bar and text */
+  gap: 5px; /* Spacing between label and bar */
+}
+
+.bar {
+  width: 100%;
+  max-width: 250px;
+  height: 8px; /* Reduced height */
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  position: relative;
+}
+
+.fill {
+  background-color: #76c7c0;
+  height: 100%;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.graphs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 300px; /* Set max height */
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.headergraph {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+.image-container {
+  flex: 7;
+  display: flex;
+  justify-content: center;
+}
+
+.progress-bars {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 5px;
+}
+
+.label,
+.label2 {
+  font-size: 12px;
+  color: #333;
+}
+
+.graphContent {
+  display: flex;
+  margin-top: 5px;
+  gap: 15px;
+  width: 100%;
+}
+
+.graphs button {
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  color: #333; /* Set text color */
+  font-size: 14px; /* Set font size */
+  padding: 5px 10px; /* Add padding for better click area */
+  cursor: pointer; /* Change cursor to pointer */
+  text-decoration: none; /* Ensure no underline */
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.graphs button:focus,
+.graphs button:active {
+  outline: none; /* Remove focus outline */
+  background: none; /* Remove active background */
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensures text and image are vertically aligned */
+  width: 100%;
+}
+
+.progress-img {
+  width: 12px; /* Set to a smaller size */
+  height: 12px; /* Set to a smaller size */
+  margin-left: 5px; /* Optional: Adds space between the text and the image */
+  object-fit: contain; /* Ensures the image resizes without distortion */
+}
+
+.orders {
+  font-weight: normal;
+}
+
+/* Profile Section */
+.profile {
+    padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 10px; /* Space between elements */
+  /* padding: 10px; */
+}
+.otionabso {
+    position: absolute;
+    top: 25px;      /* 50px from the top */
+    right: 0px;    /* 50px from the right */
+  }
+  
+
+.profile img {
+  width: 60px; /* Set the size of the profile icon */
+  height: 60px; /* Ensure the profile icon is square */
+  border-radius: 50%; /* Make the icon round */
+  object-fit: cover; /* Ensures the image fits nicely */
+}
+
+.profile .name {
+  font-size: 16px; /* Adjust font size for name */
+  font-weight: bold;
+  color: white;
+}
+
+.profile .status {
+  font-size: 14px; /* Font size for the status */
+  color: #555; /* Slightly lighter color for the status */
+  margin-top: 5px; /* Add some space between name and status */
+}
+
+.profile .info {
+  font-size: 12px; /* Smaller font size for additional info */
+  color: #777; /* Lighter color for additional info */
+  margin-top: 5px; /* Add some space between status and additional info */
+}
+
+/* If you have this profile section in your sidebar */
+.sidebar .profile {
+  margin-bottom: 30px; /* Add some space at the top */
+}
+
+.card {
+  border: 1px solid #ddd;
+  overflow: hidden; /* Ensures no border overflow for rounded corners */
+  width: 390px;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: gray;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ddd; /* Adds border at the bottom */
+  padding: 10px; /* Horizontal padding only */
+  margin: 0; /* Remove any default margins */
+}
+
+.header p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.header span {
+  font-size: 14px;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.card > div:last-child {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.card > div:last-child p {
+  font-size: 24px;
+  margin: 8px 0;
+}
+
+.card > div:last-child > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card > div:last-child > div span:first-child {
+  font-size: 14px;
+  color: #555;
+}
+
+.card > div:last-child > div span:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.progress-img {
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.monthlyspan {
+  background-color: #007bff; /* Blue background */
+}
+.percentagofspan1 {
+  color: #007bff;
+}
+.anual-span {
+  background-color: rgb(19, 238, 209);
+}
+.percentagofspan2 {
+  color: rgb(19, 238, 209);
+}
+.percentagofspan3 {
+  color: green;
+}
+.percentagofspan4 {
+  color: red;
+}
+
+.visitors-span {
+  background-color: green;
+}
+.activity-span {
+  background-color: red;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.message {
+  background-color: #fff;
+}
+
+.side-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top-row {
+  display: flex;
+  gap: 20px;
+}
+
+.user-projects,
+.todo-list,
+.transactions {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Ensures equal width for User Projects and To-Do List */
+}
+
+/* message */
+
+/* Style for the message container */
+.messageCon {
+  border: 2px solid #ddd; /* Light gray border */
+  /* padding: 20px; */
+  background-color: #f9f9f9; /* Light background color */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+/* Title of the message */
+.titlemessage {
+  border: 1px solid #ddd; /* Light gray border */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Distribute space between title and images */
+  align-items: center; /* Vertically center the content */
+  padding: 13px;
+}
+
+.titlemessage h1 {
+  padding-left: 8px;
+  font-size: 18px;
+  color: gray;
+  margin: 0; /* Remove default margin */
+}
+
+.titlemessage img {
+  margin-left: 10px; /* Space between icons */
+  width: 15px; /* Icon size */
+  height: 15px; /* Icon size */
+}
+
+/* Header of the message section */
+.messageheader {
+  padding: 15px;
+  border-bottom: 2px solid #ddd; /* Line separating the header */
+  padding-bottom: 10px;
+  background-color: rgb(243, 238, 238);
+}
+
+.titleheader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.titleheader .header-image {
+  margin-right: 5px;
+  width: 20px; /* Size of the header image */
+  height: 20px;
+}
+
+.titleheader h1 {
+  font-size: 16px;
+  color: gray;
+}
+
+.titleheaderp {
+  font-size: 10px;
+}
+
+/* Message body styles */
+.message {
+  /* border-bottom: 1px solid #eee; Light line to separate messages */
+  padding: 15px;
+}
+.message p {
+  font-size: 12px;
+  color: gray;
+}
+
+.message h2 {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 5px;
+}
+
+.message-body {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.message-time {
+  font-size: 12px;
+  color: #999;
+}
+
+.message-time span {
+  font-weight: bold;
+  color: gray;
+}
+
+.mestitname {
+  display: flex;
+  justify-content: space-between;
+}
+.message {
+  padding: 15px; /* Space inside each message */
+  margin-bottom: 10px; /* Space between messages */
+  position: relative; /* To position the line inside the message container */
+}
+
+.message:not(:last-child)::after {
+  content: ""; /* Empty content for the line */
+  position: absolute;
+  left: 10%; /* Position the line to not be full width */
+  right: 10%; /* Position the line to not be full width */
+  bottom: 0; /* Position at the bottom of the message */
+  height: 1px; /* Height of the line */
+  background-color: #ddd; /* Line color */
+}
+
+/* user project */
+.user-projects {
+  padding: 20px;
+}
+.userproject-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px; /* Add space before the border */
+}
+
+.userproject-header h1 {
+  font-size: 16px;
+  color: gray;
+}
+.user-projects table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.user-projects th {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  background-color: white;
+  color: gray;
+  font-size: 14px;
+}
+
+.user-projects td {
+  padding: 8px;
+  font-size: 12px;
+  color: gray;
+}
+
+.project-row {
+  position: relative;
+}
+
+.project-row::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%; /* Controls the length of the "button line" */
+  height: 2px;
+  background-color: #ddd; /* Color of the button-like line */
+}
+
+.user-projects img {
+  margin-right: 10px;
+}
+
+/* todolist */
+.Todolist-header {
+  font-size: 8px;
+  color: gray;
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Distribute space between title and images */
+  align-items: center; /* Vertically center the content */
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px; /* Add space before the border */
+}
+
+.todo-checkbox {
+  margin: 3px;
+  width: 10px;
+  height: 10x;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  accent-color: white; /* Set the checkbox color */
+  cursor: pointer;
+}
+
+.todo-text span {
+  display: inline-block; /* Make it behave like a block for height and width control */
+  background-color: lawngreen;
+  padding: 4px 10px; /* Adjust padding to make it more square */
+  border-radius: 4px; /* Optional: Add some border-radius for rounded corners */
+  font-size: 10px; /* Adjust font size for better alignment */
+}
+
+.todo-checkbox:focus {
+  outline: none; /* Remove the blue focus outline */
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f4f7f8;
+  margin: 5px;
+  padding-left: 7px;
+  border-radius: 2px;
+  height: 30px;
+  color: gray;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.todo-checkbox:checked + .todo-text {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.todo-text {
+  font-size: 10px;
+}
+.todoList-contain {
+  padding-top: 25px;
+}
+
+/* transaction */
+.transactions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-header {
+  background-color: #fff; /* white background for the header */
+  padding: 20px;
+  color: gray;
+  font-size: 12px;
+  border-bottom: 1px solid #ddd; /* Bottom border in gray color */
+}
+
+.image-container {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Ensures the image fills the container while maintaining aspect ratio */
+  display: block;
+}
+
+@media screen and (max-width: 1024px) {
+  /* Basic column layout setup */
+  .dashboard {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 60%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    z-index: 1000;
+    transition: 0.3s;
+    background: 2c3e50;
+    overflow-y: auto;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Transform top bar cards to column */
+  .top-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Graphs section to column */
+  .graphs {
+    padding: 10px;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 250px; /* Adding bottom margin to separate sections */
+  }
+
+  .headergraph {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .icons button {
+    width: 100%;
+    margin: 0;
+  }
+
+  .graphContent {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px; /* Add margin-bottom to separate it from the next section */
+  }
+
+  .progress-bars {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .progress-bar {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Dashboard content to column */
+  .dashboard-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .messageCon {
+    width: 100%;
+    margin-bottom: 20px; /* Adding bottom margin to separate from other content */
+  }
+
+  .side-content {
+    width: 100%;
+  }
+  .progress-bars {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px; /* Space between progress bars */
+    padding: 10px;
+    margin-top: 50px;
+    box-sizing: border-box; /* Ensure padding does not affect width */
+  }
+
+  /* Message section adjustments */
+  .message {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px; /* Add margin-bottom for spacing */
+  }
+
+  .mestitname {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .message-time {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* Projects and Todo section */
+  .top-row {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .user-projects {
+    width: 100%;
+  }
+
+  .todo-list {
+    width: 100%;
+  }
+
+  .todoList-contain {
+    width: 100%;
+  }
+
+  .todo {
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  }
+
+  /* Table adjustments */
+  .project-row {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .project-row td {
+    width: 100%;
+    padding: 5px 0;
+    text-align: left;
+  }
+
+  /* Transaction section */
+  .transactions {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .transaction-header {
+    width: 100%;
+  }
+
+  .image-container {
+    width: 100%;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Header card adjustments */
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .monthlyspan,
+  .anual-span,
+  .visitors-span,
+  .activity-span {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  /* Messages section adjustments */
+  .titlemessage,
+  .messageheader {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .titleheader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Progress bar container */
+  .progress-bars {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Table responsive */
+  table {
+    width: 100%;
+  }
+
+  thead {
+    display: none; /* Hide table headers on mobile */
+  }
+
+  tbody tr {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  td {
+    display: flex;
+    padding: 5px 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    margin-right: 10px;
+  }
+}
+
+/* Additional small screen optimizations */
+@media screen and (max-width: 480px) {
+  .content {
+    padding: 5px;
+  }
+
+  .message,
+  .todo {
+    padding: 10px 5px;
+  }
+
+  .progress-label {
+    font-size: 12px;
+  }
+}
+
+/* Hamburger menu styles */
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+  background: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1024px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .content {
+    padding-top: 60px;
+  }
+}
