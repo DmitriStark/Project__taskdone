@@ -375,7 +375,7 @@ body {
 .card {
   border: 1px solid #ddd;
   overflow: hidden; /* Ensures no border overflow for rounded corners */
-  width: 390px;
+  width: 290px;
   font-family: Arial, sans-serif;
   background-color: #fff;
   color: gray;
@@ -1025,11 +1025,20 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 1024px) {
+
+@media screen and (min-width: 1800px) {
   .mobile-menu-toggle {
     display: block;
   }
 
+  .card {
+    border: 1px solid #ddd;
+    overflow: hidden; /* Ensures no border overflow for rounded corners */
+    width: 390px;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: gray;
+  }
   .content {
     padding-top: 60px;
   }
