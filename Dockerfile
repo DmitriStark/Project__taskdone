@@ -1,5 +1,5 @@
-# Use the official PHP image with Apache
-FROM php:8.0-apache
+# Use the official PHP 8.2 image with Apache
+FROM php:8.2-apache
 
 # Install necessary PHP extensions
 RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev \
