@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
-  plugins: [vue()],
-  root: 'resources', // Make sure this points to your 'resources' directory
-  build: {
-    outDir: '../public/build', // The build will be output to the 'public/build' folder
-    manifest: true, // Enable manifest for Laravel to know the compiled assets
-  },
+    plugins: [
+        laravel({
+            input: ['resources/css/app.css', 'resources/js/app.js'],
+            refresh: true,
+        }),
+    ],
 });
