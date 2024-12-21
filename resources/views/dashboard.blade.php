@@ -563,10 +563,27 @@
                 </p>
                 <p class="message-time">
                   <!-- Optionally, display the full date and time -->
-                  <span>{{ $message->message_time ? \Carbon\Carbon::parse($message->message_time)->format('h:i A') : 'N/A' }} -
+                  <span>
+                    @if ($message->message_time)
+                    @php
+                    $messageTime = \Carbon\Carbon::parse($message->message_time);
+                    $now = \Carbon\Carbon::now();
+                    @endphp
+                    @if ($messageTime->isToday())
+                    Today - {{ $messageTime->format('h:i A') }}
+                    @elseif ($messageTime->isYesterday())
+                    Yesterday - {{ $messageTime->format('h:i A') }}
+                    @else
+                    {{ $messageTime->format('h:i A') }} - <span>{{ $messageTime->format('d.m.Y') }}</span>
+                    @endif
+                    @else
+                    N/A
+                    @endif
                     <span>{{ $message->message_time ? \Carbon\Carbon::parse($message->message_time)->format('d.m.Y') : 'N/A' }}</span>
+
                   </span>
                 </p>
+
               </div>
               @endforeach
             </div>
