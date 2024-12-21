@@ -1027,9 +1027,6 @@ body {
 
 
 @media screen and (min-width: 1800px) {
-  .mobile-menu-toggle {
-    display: block;
-  }
 
   .card {
     border: 1px solid #ddd;
@@ -1039,7 +1036,5 @@ body {
     background-color: #fff;
     color: gray;
   }
-  .content {
-    padding-top: 60px;
-  }
 }
+
