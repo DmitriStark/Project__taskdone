@@ -570,16 +570,16 @@
                     $now = \Carbon\Carbon::now();
                     @endphp
                     @if ($messageTime->isToday())
-                    Today - {{ $messageTime->format('h:i A') }}
+                    Today {{ $messageTime->format('h:i A') }}
                     @elseif ($messageTime->isYesterday())
-                    Yesterday - {{ $messageTime->format('h:i A') }}
+                    Yesterday {{ $messageTime->format('h:i A') }}
                     @else
-                    {{ $messageTime->format('h:i A') }} - <span>{{ $messageTime->format('d.m.Y') }}</span>
+                    {{ $messageTime->format('h:i A') }}  <span>{{ $messageTime->format('d.m.Y') }}</span>
                     @endif
                     @else
                     N/A
                     @endif
-                    <span>{{ $message->message_time ? \Carbon\Carbon::parse($message->message_time)->format('d.m.Y') : 'N/A' }}</span>
+                    <span>- {{ $message->message_time ? \Carbon\Carbon::parse($message->message_time)->format('d.m.Y') : 'N/A' }}</span>
 
                   </span>
                 </p>
